@@ -56,7 +56,7 @@ const deleteUser= (id) => {
         throw Error('user not found')
     }
     saveUsers(updatedUsers)
-    return JSON.parse(updatedUsers)
+    return JSON.stringify(updatedUsers)
 }
 
 const withdraw= (id, amount) => {
