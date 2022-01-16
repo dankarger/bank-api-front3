@@ -6,7 +6,7 @@ const getUsers =() => {
         const userJSON = users.toString();
         return JSON.parse(userJSON)
     } catch (e) {
-        return [];
+        return [{"test":"test"}];
     }
 };
 
