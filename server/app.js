@@ -33,9 +33,9 @@ app.get('/users',(req, res) => {
 app.get('/user',(req, res) => {
         console.log(req.query)
     try {
-    //     if(!req.query.id){
-    //         return res.status(403).send('404')
-    //     }
+        if(!req.query.id){
+            return res.status(403).send('404')
+        }
         res.status(200).header('Access-Control-Allow-Origin','*').send(getUserDetail(req.query.id));
     } catch (e) {
         res.status(400).send({ error: e.message })
