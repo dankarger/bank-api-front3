@@ -34,7 +34,7 @@ app.get('/user',(req, res) => {
         console.log(req.query)
     try {
         if(!req.query.id){
-            return res.status(403).send('404',{title:"Invalid input --"})
+            return res.status(403).send('404')
         }
         res.status(200).header('Access-Control-Allow-Origin','*').send(getUserDetail(req.query.id));
     } catch (e) {
@@ -107,7 +107,7 @@ app.get('/users/filter',(req, res) => {
 app.get('*',(req,res)=> {
     res.status(404).send('404')
 })
-const PORT = 3000;
+
 
 
 app.listen(port,() => {
