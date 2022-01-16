@@ -3,7 +3,7 @@ const fs = require('fs')
 
 const getUsers =() => {
     try {
-        const users = fs.readFileSync('/db/users.json');
+        const users = fs.readFileSync('./db/users.json');
         const userJSON = users.toString();
         return JSON.parse(userJSON)
     } catch (e) {
