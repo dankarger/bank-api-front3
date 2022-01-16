@@ -31,16 +31,16 @@ const addUser = (body) =>{
          // if(!validateInput('number',+body.credit))throw Error('credit input must be type of number ')
 
     users.find(user => {
-            if (user.id === +body.id) {
+            if (user.id === body.id) {
                 throw Error('user all ready exist')
             }
         });
         const newUser = {
-            id:+body.id,
+            id:body.id,
             first:body.first,
             last:body.last,
-            cash:+body.cash,
-            credit:+body.credit
+            cash:body.cash,
+            credit:body.credit
         }
         users.push(newUser)
         saveUsers(users)
