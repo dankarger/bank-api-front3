@@ -13,7 +13,7 @@ const getUsers =() => {
 
 const saveUsers = (users)=> {
     const dataJson = JSON.stringify(users)
-    fs.writeFileSync('./db/users.json',dataJson)
+    fs.writeFileSync('../server/db/users.json',dataJson)
 }
 
 const stringToJson = (message,string)=> {
