@@ -70,7 +70,7 @@ app.put('/users/deposit',(req, res) => {
 app.put('/users/withdraw',(req, res) => {
     try {
         // const[{id, amount}] = req.query
-        res.status(200).render(withdraw(req.body.id, req.body.amount))
+        res.status(200).send(withdraw(req.body.id, req.body.amount))
     }catch (e) {
         res.status(400).send({ error: e.message })
     }
@@ -96,14 +96,14 @@ app.put('/users/transfer',(req, res) => {
 
 app.get('/users/filter',(req, res) => {
     try {
-        res.status(200).render('index',{users:filterUsers(req.query.type, req.query.amount),title:`Filtered users: ${req.query.type} ${req.query.amount}`})
+        res.status(200).send(filterUsers(req.query.type, req.query.amount))
     }catch (e) {
         res.status(400).send({ error: e.message })
     }
 })
 
 app.get('*',(req,res)=> {
-    res.status(404).render('404',{title:"Page"})
+    res.status(404).send('404')
 })
 const PORT = 3000;
 
