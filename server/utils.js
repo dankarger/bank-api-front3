@@ -36,7 +36,7 @@ const addUser = (body) =>{
             }
         });
         const newUser = {
-            id:body.id,
+            id: body.id,
             first:body.first,
             last:body.last,
             cash:body.cash,
