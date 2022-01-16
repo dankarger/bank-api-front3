@@ -24,7 +24,7 @@ app.use(express.json());
 
 app.get('/users',(req, res) => {
     try {
-        res.status(200).send(getUsers());
+        res.status(200).render('index',{users:getUsers()});
     } catch (e) {
         res.status(400).send({ error: e.message })
     }
