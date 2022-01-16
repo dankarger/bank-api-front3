@@ -27,8 +27,8 @@ const addUser = (body) =>{
 
         if(!validateInput('string',body.first))throw Error('Name input must be type of string ')
          if(!validateInput('string',body.last))throw Error('Name input must be type of string2 ')
-         if(!validateInput('number',+body.cash))throw Error('cash input must be type of number ')
-         if(!validateInput('number',+body.credit))throw Error('credit input must be type of number ')
+         // if(!validateInput('number',+body.cash))throw Error('cash input must be type of number ')
+         // if(!validateInput('number',+body.credit))throw Error('credit input must be type of number ')
 
     users.find(user => {
             if (user.id === body.id) {
