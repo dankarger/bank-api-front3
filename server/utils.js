@@ -44,7 +44,7 @@ const addUser = (body) =>{
         }
         users.push(newUser)
         saveUsers(users)
-        return newUser
+        return JSON.stringify(newUser)
 }
 
 const deleteUser= (id) => {
