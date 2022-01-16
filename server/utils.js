@@ -22,7 +22,7 @@ const stringToJson = (message,string)=> {
 
 const addUser = (body) =>{
     console.log('ggg',body)
-        const users = getUsers();
+        const users = JSON.parse(getUsers());
      // if(!validateInput('number',body.id))throw Error('id input must be type of number ')
 
         if(!validateInput('string',body.first))throw Error('Name input must be type of string ')
@@ -31,7 +31,7 @@ const addUser = (body) =>{
          // if(!validateInput('number',+body.credit))throw Error('credit input must be type of number ')
 
     users.find(user => {
-            if (user.id === body.id) {
+            if (user.id === +body.id) {
                 throw Error('user all ready exist')
             }
         });
